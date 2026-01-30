@@ -1,0 +1,391 @@
+﻿/* ==================================================
+   Base / Global
+================================================== */
+
+body {
+    margin: 0;
+    background-color: #5BCEFA;
+}
+
+.bungee-regular {
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
+    color: #a43105;
+}
+
+/* ==================================================
+   Navigation
+================================================== */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F5A9B8;
+}
+
+    ul li {
+        float: left;
+    }
+
+        ul li a {
+            display: block;
+            padding: 14px 16px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+
+            ul li a:hover {
+                background-color: #db95a3;
+            }
+
+    /* clearfix for floated nav */
+    ul::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+/* ==================================================
+   Home / Shared
+================================================== */
+
+.me {
+    width: 300px;
+    display: block;
+    margin: 2rem auto;
+}
+
+#text {
+    text-align: center;
+}
+
+.languages {
+    max-width: 800px;
+    margin: 1.5rem auto;
+    text-align: center;
+}
+
+/* ==================================================
+   Page Content
+================================================== */
+
+.page-content {
+    max-width: 900px;
+    margin: 3rem auto 4rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.page-title {
+    margin-bottom: 1rem;
+}
+
+.page-description {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-family: "Bungee", sans-serif;
+    color: #a43105;
+}
+
+/* ==================================================
+   Video / Media
+================================================== */
+
+.video-wrapper,
+.project-video {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    background-color: #555; /* fallback color if video doesn't load */
+    border-radius: 16px;
+    overflow: hidden;
+    min-height: 200px; /* ensures the container shows even without video */
+}
+
+    .video-wrapper video,
+    .project-video video {
+        width: 100%;
+        display: block;
+        border-radius: 16px;
+        border: 4px solid #F5A9B8;
+    }
+
+/* ==================================================
+   Image Gallery
+================================================== */
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+    .image-gallery img {
+        width: 100%;
+        border-radius: 12px;
+    }
+
+/* ==================================================
+   Projects Grid (projects.html)
+================================================== */
+
+.projects,
+.projects-grid {
+    max-width: 1000px;
+    margin: 3rem auto 4rem;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* ==================================================
+   Project Cards / Tiles
+================================================== */
+
+.project-card,
+.project-tile {
+    background-color: #F5A9B8;
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .project-card:hover,
+    .project-tile:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .project-card h2,
+    .project-tile h2 {
+        font-family: "Bungee", sans-serif;
+        color: white;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    .project-card p,
+    .project-tile p {
+        color: white;
+        text-align: center;
+        font-size: 0.95rem;
+    }
+
+/* ==================================================
+   Project Tags
+================================================== */
+
+.project-tag {
+    display: inline-block;
+    background-color: white;
+    color: #a43105;
+    font-family: "Bungee", sans-serif;
+    font-size: 0.65rem;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 0.8rem;
+}
+
+/* ==================================================
+   Projects Page Header
+================================================== */
+
+.projects-header,
+.project-header {
+    text-align: center;
+    margin: 3rem auto 2rem;
+    max-width: 900px;
+}
+
+    .projects-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .project-header h1 {
+        font-size: 2.4rem;
+    }
+
+.projects-subtitle,
+.project-subtitle {
+    font-family: "Bungee", sans-serif;
+    color: #a43105;
+    font-size: 0.9rem;
+}
+
+/* ==================================================
+   Project Detail Page
+================================================== */
+
+.project-description {
+    margin: 3rem 0 2rem;
+    text-align: center;
+}
+
+    .project-description h2 {
+        margin-bottom: 1rem;
+    }
+
+    .project-description p {
+        max-width: 700px;
+        margin: 0 auto 1rem;
+    }
+
+.project-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+    .project-meta h3 {
+        font-family: "Bungee", sans-serif;
+        font-size: 0.9rem;
+    }
+
+    .project-meta p {
+        font-size: 0.9rem;
+    }
+
+/* ==================================================
+   Mobile
+================================================== */
+
+@media (max-width: 600px) {
+    .me {
+        width: 200px;
+    }
+
+    .project-card,
+    .project-tile {
+        padding: 1.2rem;
+    }
+
+    .projects-header h1,
+    .project-header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* ==================================================
+   Project Page Header
+================================================== */
+
+.project-header {
+    text-align: center;
+    margin: 3rem auto 2rem;
+    max-width: 900px;
+}
+
+    .project-header h1 {
+        font-family: "Bungee", sans-serif;
+        font-size: 2.8rem; /* bigger and more noticeable */
+        color: #a43105;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-header .project-subtitle {
+        font-family: "Bungee", sans-serif;
+        color: #a43105;
+        font-size: 1rem;
+        margin-top: 0;
+    }
+
+    .project-header .project-tag {
+        display: inline-block;
+        background-color: white;
+        color: #a43105;
+        font-family: "Bungee", sans-serif;
+        font-size: 0.75rem;
+        padding: 5px 12px;
+        border-radius: 999px;
+        margin-bottom: 1rem;
+    }
+
+
+/* ==================================================
+   Project Detail Page Styling
+================================================== */
+
+.project-description {
+    max-width: 900px;
+    margin: 3rem auto 4rem;
+    padding: 0 1rem;
+    text-align: center;
+    font-family: "Bungee", sans-serif;
+    color: #a43105;
+}
+
+    .project-description h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-description p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+.project-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+    .project-meta h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        color: white;
+    }
+
+    .project-meta p {
+        font-size: 0.95rem;
+        color: white;
+    }
+
+/* Style the back link */
+.project-description a.project-card {
+    display: inline-block;
+    background-color: #F5A9B8;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-family: "Bungee", sans-serif;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .project-description a.project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+/* ==================================================
+   Mobile tweaks
+================================================== */
+
+@media (max-width: 600px) {
+    .project-description h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-description p,
+    .project-meta p {
+        font-size: 0.9rem;
+    }
+
+    .project-meta {
+        gap: 1rem;
+    }
+}
+
+
+

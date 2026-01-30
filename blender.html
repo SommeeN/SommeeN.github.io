@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Unreal Game – Eli Morchower</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ===== Navigation ===== -->
+    <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+
+    <!-- ===== Project Header ===== -->
+    <header class="project-header">
+        <span class="project-tag">Blender</span>
+        <h1>Sword In Blender</h1>
+        <p class="project-subtitle">Simple Game Made in Unreal Engine 5 Using Template</p>
+    </header>
+
+    <!-- ===== Project Video / Image ===== -->
+    <div class="video-wrapper" style="width: 300px; overflow: hidden; position: relative;">
+        <!-- Image -->
+        <img id="preview-image" src="./images/sword.png"
+             style="width: 100%; height: auto; display: block;">
+
+        <!-- Video -->
+        <video id="main-video" autoplay muted playsinline loop
+               style="width: 100%; height: auto; display: none;">
+            <source src="./videos/sword.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        const image = document.getElementById('preview-image');
+        const video = document.getElementById('main-video');
+
+        const imageDuration = 3000; // 3 seconds
+        const videoDuration = 5000; // 5 seconds (adjust to your video length)
+
+        function loopMedia() {
+            // Show image
+            image.style.display = 'block';
+            video.style.display = 'none';
+            video.pause();
+
+            setTimeout(() => {
+                // Show video
+                image.style.display = 'none';
+                video.style.display = 'block';
+                video.currentTime = 0; // restart video
+                video.play();
+            }, imageDuration);
+
+            setTimeout(loopMedia, imageDuration + videoDuration); // repeat
+        }
+
+        loopMedia(); // start the loop
+    </script>
+
+
+
+
+    <!-- ===== Project Description ===== -->
+    <main class="project-description">
+        <h2>About this Project</h2>
+        <p>This is a sword 3d model that was made by following tutorial and is an introduction to blender and how it works.</p>
+
+        <h2>Tools & Skills Used</h2>
+        <div class="project-meta">
+            <div>
+                <h3>Tools</h3>
+                <p>Blender</p>
+            </div>
+            <div>
+                <h3>Skills</h3>
+                <p>3d Modeling</p>
+            </div>
+        </div>
+
+        <p style="margin-top:2rem;">
+            <a href="projects.html" class="project-card">← Back to Projects</a>
+        </p>
+    </main>
+
+</body>
+</html>
